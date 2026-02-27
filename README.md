@@ -25,3 +25,4 @@ Open `test_torch.py` and press the Run button, or:
 - NumPy array creation
 - Matrix multiplication with `torch.matmul`
 - Plotting `exp(x)` over an array using matplotlib
+- Numerical differentiation of `exp(x)` using `np.diff`, plotted alongside the original
