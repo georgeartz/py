@@ -35,9 +35,23 @@ y = np.exp(x)
 print("x = ", x)
 print("y = ", y)
 
-plt.plot(x, y, marker='o')
-plt.title("exp(x)")
-plt.xlabel("x")
-plt.ylabel("exp(x)")
-plt.grid(True)
+dy = np.diff(y) / np.diff(x)
+x_mid = (x[:-1] + x[1:]) / 2  # midpoints for plotting
+print("dy/dx = ", dy)
+
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(6, 8))
+
+ax1.plot(x, y, marker='o')
+ax1.set_title("exp(x)")
+ax1.set_xlabel("x")
+ax1.set_ylabel("exp(x)")
+ax1.grid(True)
+
+ax2.plot(x_mid, dy, marker='o', color='orange')
+ax2.set_title("d/dx exp(x)")
+ax2.set_xlabel("x")
+ax2.set_ylabel("dy/dx")
+ax2.grid(True)
+
+plt.tight_layout()
 plt.show()
